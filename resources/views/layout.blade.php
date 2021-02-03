@@ -20,9 +20,9 @@
             }
         </style>
 
-        {{-- <link rel="stylesheet" href="{{url('/home/ubuntu/newsnice/mybulma/css/mystyles.css')}}"> --}}
+        <link rel="stylesheet" href="{{url('css/mystyles.css')}}">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.css" />
+        {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.css" /> --}}
 
         <link rel="shortcut icon" type="image/jpg" href="images/favicon.ico"/>
 
