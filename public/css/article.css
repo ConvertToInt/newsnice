@@ -1,0 +1,6 @@
+.imageBox{
+    border:1px solid rgb(0, 0, 0);
+    height:100px;
+    width:150px;
+    border-radius:3%
+}

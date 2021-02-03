@@ -76,6 +76,7 @@ class ArticleController extends Controller
                     $article->created_at = $result->data->created;
                     $article->flair = $result->data->link_flair_text;
                     $article->url = $result->data->url_overridden_by_dest;
+                    //$article->slug = $result-title-slugify-max words 8 ADD TO MIGRATION
                     $article->save();
                 }
                 
