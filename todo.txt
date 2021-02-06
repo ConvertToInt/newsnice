@@ -1,16 +1,15 @@
 -finish settings page (avatar?)
--following page + feature (category(NOT FLAIR!) table, following table)
-    -article foreign key 'category_id' linking to category_id in 'category' table
--article page (create slug)
--comments
--like system (articles&comments... or just articles)
--new & popular filters
+-article page
+    -like system (articles&comments... or just articles)
+    -following button
 -search bar
     -on desktop have bar which redirects to /search.. on mobile add link in burger bring to /search page
     -have search panel pop up with categories.. when clicked send query string ?category= then fetch Category->articles() (m2m relationship defined)
-
 -admin panel & user
     -remove comments
     -unapprove articles
     -change user display name
+
+EXTRA:
+-new & popular filters
 -smtp server

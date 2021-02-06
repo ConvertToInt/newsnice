@@ -66,4 +66,8 @@ class User extends Authenticatable
 
         return Article::whereIn('category_id', $articles)->latest()->get();
     }
+
+    public function comment() {
+        return $this->hasMany('App\Models\Comment');
+    }
 }

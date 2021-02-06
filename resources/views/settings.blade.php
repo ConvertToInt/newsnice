@@ -9,7 +9,7 @@
 <div class="columns is-centered">
     <div class="column is-half">
 
-    <form method="POST" action="{{ route('update', ['user'=>$user]) }}">
+    <form method="POST" action="{{ route('settings_update', ['user'=>$user]) }}">
         @csrf
         @method('PATCH')
 
