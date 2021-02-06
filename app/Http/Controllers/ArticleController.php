@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Models\Article;
+use App\Models\Category;
 
 class ArticleController extends Controller
 {
@@ -54,7 +56,7 @@ class ArticleController extends Controller
 
         $this->insertToDb($results); // inserts relevant info in to db
 
-        $articles = Article::all();
+        $articles = Article::latest()->get();
 
         return view('article.index', ['articles'=>$articles]); //passes JSON array of posts to main page
 
@@ -65,20 +67,31 @@ class ArticleController extends Controller
         public function insertToDb($results){
 
             foreach ($results as $result){
-                
-                $exists = Article::select("*")->where("id", $result->data->id)->exists(); // to check if the article already exists in database
 
-                if (!$exists){ // will only run if the the variable $article returns false
+                $category_exists = Category::select("*")->where("category", $result->data->link_flair_text)->exists(); // to check if the article already exists in database
+
+                if (!$category_exists){ // will only run if the the variable $article returns false
+                    $category = new Category;
+                    $category->category = $result->data->link_flair_text;
+                    $category->save();
+                }
+                
+                $article_exists = Article::select("*")->where("id", $result->data->id)->exists(); // to check if the article already exists in database
+
+                if (!$article_exists && $result->data->thumbnail != "default"){ // will only run if the the variable $article returns false
                     $article = new Article;
                     $article->id = $result->data->id;
                     $article->title = $result->data->title;
+                    $words = Str::words($result->data->title, 8); //max words 8
+                    $article->slug = Str::slug($words, '_'); //slugifies 8 words
                     $article->thumbnail = $result->data->thumbnail;
                     $article->created_at = $result->data->created;
-                    $article->flair = $result->data->link_flair_text;
+                    $article->category_id = Category::where('category', $result->data->link_flair_text)->value('id');
                     $article->url = $result->data->url_overridden_by_dest;
-                    //$article->slug = $result-title-slugify-max words 8 ADD TO MIGRATION
                     $article->save();
                 }
+
+                //if the article doesn't have a thumbnail or an img then dont add to the db
                 
             }
                 

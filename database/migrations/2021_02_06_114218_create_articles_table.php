@@ -16,9 +16,10 @@ class CreateArticlesTable extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->string('id');
             $table->string('title',500);
-            $table->string('url',500);
+            $table->string('slug',100);
+            $table->string('url',300);
             $table->string('thumbnail');
-            $table->string('flair')->nullable();
+            $table->foreignId('category_id')->references('id')->on('categories');
             $table->boolean('approved')->default('1');
             $table->timestamps();
         });

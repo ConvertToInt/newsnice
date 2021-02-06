@@ -19,7 +19,7 @@
         <div class="columns">
             <div class="column is-9">
                 <p>
-                    <span class="has-text-weight-bold is-size-6 has-text-grey-lighter">{{$article->flair}}</span>&nbsp&middot;&nbsp{{$article->created_at->diffForHumans()}} {{-- diffforhumans uses created at to calculate time since creation --}}
+                    <span class="has-text-weight-bold is-size-6 has-text-grey-lighter">{{$article->category->category}}</span>&nbsp&middot;&nbsp{{$article->created_at->diffForHumans()}} {{-- diffforhumans uses created at to calculate time since creation --}}
                 </p><br>
             </div>
         </div>

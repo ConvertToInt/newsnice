@@ -58,11 +58,4 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
-
-    public function path($append = '')
-    {
-        $path = route('settings', $this->id);
-
-        return $append ? "{path}/{$append}" : $path;
-    }
 }
