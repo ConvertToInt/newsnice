@@ -28,6 +28,12 @@
 
         @yield('head')
 
+        <?php
+        if (Auth::user()){
+            $user = auth()->user();
+        }
+        ?>
+
     </head>
 
     <body>
@@ -35,8 +41,8 @@
         <nav class="navbar has-background-white-ter mb-6 py-3" role="navigation" aria-label="main navigation">
 
             <div class="navbar-brand" style="margin-left:33%">
-                <a class="navbar-item" href="{{ url('/') }}">
-                    <img src="img/logobig.png" width="500">
+                <a class="navbar-item" href="{{ route('home') }}">
+                    <img src="{{url('img/logobig.png')}}" width="500">
                 </a>
 
                 <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -52,8 +58,8 @@
                     @if (Route::has('login'))
                         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                             @auth
-                                <a href="{{ url('/settings') }}">
-                                    <img src="img/cog.png" width="500">
+                                <a href="{{ route('settings', ['user'=>$user])}}">
+                                    <img src="{{url('img/cog.png')}}" width="500">
                                 </a>
                             @else
                                 <a href="{{ route('login') }}" class="button is-primary">Login</a>
