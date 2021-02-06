@@ -56,7 +56,8 @@ class ArticleController extends Controller
 
         $this->insertToDb($results); // inserts relevant info in to db
 
-        $articles = Article::latest()->get();
+        //$articles = Article::latest()->get();
+        $articles = auth()->user()->feed();
 
         return view('article.index', ['articles'=>$articles]); //passes JSON array of posts to main page
 
