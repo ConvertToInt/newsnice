@@ -16,6 +16,7 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', [ArticleController::class, 'index'])->name('home');
+Route::get('/following', [ArticleController::class, 'following_feed'])->name('following_feed');
 Route::get('/{user}/settings', [UserController::class, 'show'])->name('settings');
 Route::patch('/{user}/update', [UserController::class, 'update'])->name('update');
 
