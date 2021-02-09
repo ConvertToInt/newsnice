@@ -18,6 +18,10 @@
             body {
                 font-family: 'Nunito';
             }
+
+            .cog{
+                display:inline !important;
+            }
         </style>
 
         <link rel="stylesheet" href="{{url('css/mystyles.css')}}">
@@ -56,10 +60,10 @@
                 <div class="navbar-end">
                 <div class="navbar-item">
                     @if (Route::has('login'))
-                        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                        <div class="hidden top-0 right-0 px-6 py-4 sm:block">
                             @auth
-                                <a href="{{ route('settings', ['user'=>$user])}}">
-                                    <img src="{{url('img/cog.png')}}" width="500">
+                                <a href="{{ route('profile.show') }}">
+                                    <img class="cog" src="{{url('img/cog.PNG')}}" width="40">
                                 </a>
                             @else
                                 <a href="{{ route('login') }}" class="button is-primary">Login</a>
