@@ -1,7 +1,6 @@
--finish settings page (avatar?)
--article page
-    -like system (articles&comments... or just articles)
-    -following button
+-swtich everything to use app layout
+-like system (articles&comments... or just articles)
+-following categories
 -search bar
     -on desktop have bar which redirects to /search.. on mobile add link in burger bring to /search page
     -have search panel pop up with categories.. when clicked send query string ?category= then fetch Category->articles() (m2m relationship defined)
@@ -9,7 +8,17 @@
     -remove comments
     -unapprove articles
     -change user display name
+    -ban users (https://blog.quickadminpanel.com/3-ways-to-delete-user-in-laravel-block-hide-or-hard-delete/)
+-authorization
+-cookies for guest following
+-responsiveness
+    -articles & pages
+    -settings
+    -admin panel
+-register with .edu, .ac email  
+-privacy policy (activate in jetstream.php)
 
 EXTRA:
 -new & popular filters
 -smtp server
+-profile avatar
