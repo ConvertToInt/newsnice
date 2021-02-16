@@ -8,6 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
         <!-- Styles -->
         <style>
@@ -19,16 +20,31 @@
                 font-family: 'Nunito';
             }
 
-            .cog{
-                display:inline !important;
+            .navbar-brand{
+                position: absolute;
+                left:50%;
+                top:50%;
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
             }
+
+            /*.navbar-menu{
+                position: relative !important;
+            }
+
+            .navbar-brand{
+                position: absolute;
+                left: 35%;
+            }*/
         </style>
 
         <link rel="stylesheet" href="{{url('css/mystyles.css')}}">
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
 
         {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.css" /> --}}
 
         <link rel="shortcut icon" type="image/jpg" href="images/favicon.ico"/>
+        <script src="https://kit.fontawesome.com/09255c1d6c.js" crossorigin="anonymous"></script>
 
         @yield('head')
 
@@ -42,28 +58,46 @@
 
     <body>
 
-        <nav class="navbar has-background-white-ter mb-6 py-3" role="navigation" aria-label="main navigation">
+        <nav class="navbar has-background-white-ter mb-6 py-5" role="navigation" aria-label="main navigation">
 
-            <div class="navbar-brand" style="margin-left:33%">
-                <a class="navbar-item" href="{{ route('home') }}">
-                    <img src="{{url('img/logobig.png')}}" width="500">
-                </a>
+            <div class="navbar-menu">
 
-                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                </a>
-            </div>
+                <div class="navbar-brand">
+                    <div class="navbar-item" >
+                    <a href="{{ route('home') }}">
+                        <img src="{{url('img/logobig.png')}}" width="425">
+                    </a>
+                    </div>
 
-            <div id="navbarBasicExample" class="navbar-menu">
+                    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                
                 <div class="navbar-end">
+                <div class="navbar-item">    
+                <form action="{{ route('search') }}" method="GET" class="navbar-item ml-3">
+
+                    <div class="field">
+                        <div class="control has-icons-left">
+                            <input class="input" type="name" name="articles" placeholder="Search for articles..." required>
+                            <span class="icon is-small is-left">
+                            <i class="fas fa-search"></i>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+                </div>
                 <div class="navbar-item">
                     @if (Route::has('login'))
                         <div class="hidden top-0 right-0 px-6 py-4 sm:block">
                             @auth
                                 <a href="{{ route('profile.show') }}">
-                                    <img class="cog" src="{{url('img/cog.PNG')}}" width="40">
+                                    <span class="icon is-medium has-text-black">
+                                    <i class="fas fa-cog fa-2x"></i>
+                                    </span>
                                 </a>
                             @else
                                 <a href="{{ route('login') }}" class="button is-primary">Login</a>
@@ -75,6 +109,7 @@
                         </div>
                     @endif
                 </div>
+                
                 </div>
             </div>
         </nav>   

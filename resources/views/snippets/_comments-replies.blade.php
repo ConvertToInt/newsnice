@@ -6,7 +6,7 @@
                 <div class="columns">
                     <div class="column is-11">
                         <p>
-                            <small>Comment by u/{{$comment->user->username}}</small> <small>{{$comment->created_at->diffForHumans()}}</small> {{-- diffforhumans uses created at to calculate time since creation --}}
+                            <small>Comment by u/{{$comment->user->display_name}}</small> <small>{{$comment->created_at->diffForHumans()}}</small> {{-- diffforhumans uses created at to calculate time since creation --}}
                             <br><br>
                             <p class="is-5 has-text-black-lighter">{{$comment->body}}</p>
                         </p>
@@ -53,9 +53,18 @@
                     @endauth
                     </div>
                 </div>
+                <form method ="POST"
+            action='{{url("/comment/{$comment->id}/toggleLike")}}'>
+            @csrf
+
+            <button class="button is-primary" type="submit">
+                Like
+            </button>
+    </form>
             </div>
         </div>
     </div>
+    
     @include('snippets._comments-replies', ['comments' => $comment->replies])
 </div>
 

@@ -21,13 +21,29 @@ class Comment extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function post()
+    public function article()
     {
-        return $this->belongsTo(Post::class);
+        return $this->belongsTo(Article::class);
     }
 
     public function replies()
     {
         return $this->hasMany('App\Models\Comment', 'parent_id');
     }
+
+    public function likes()
+    {
+        return $this->morphToMany('App\Models\User', 'likeable', 'likes')->whereDeletedAt(null);
+    }
+
+    /**
+     * Check whether user has liked an object
+     */
+    public function isLiked($type) 
+    {
+        return $this->likes()
+            ->where('likeable_id', $this->id)
+            ->where('likeable_type', $this->getMorphClass()) //gets the type from the morph map defined in appserviceprovider
+            ->exists();
+    } 
 }

@@ -1,9 +1,7 @@
--swtich everything to use app layout
+-switch everything to use app layout
 -like system (articles&comments... or just articles)
 -following categories
--search bar
-    -on desktop have bar which redirects to /search.. on mobile add link in burger bring to /search page
-    -have search panel pop up with categories.. when clicked send query string ?category= then fetch Category->articles() (m2m relationship defined)
+have search panel pop up with categories.. when clicked send query string ?category= then fetch Category->articles() (m2m relationship defined)
 -admin panel & user
     -remove comments
     -unapprove articles
@@ -12,13 +10,11 @@
 -authorization
 -cookies for guest following
 -responsiveness
-    -articles & pages
-    -settings
-    -admin panel
--register with .edu, .ac email  
 -privacy policy (activate in jetstream.php)
+-landing page
+-spinners
 
 EXTRA:
--new & popular filters
--smtp server
--profile avatar
+-feed filters (new, top, hot)
+-smtp server (login filter .edu, .ac)
+-report feature (add reported boolean to user, comment, or article)
