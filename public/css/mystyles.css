@@ -3521,7 +3521,7 @@ button.dropdown-item {
 
 .navbar {
   background-color: white;
-  min-height: 5rem;
+  min-height: 7rem;
   position: relative;
   z-index: 30; }
   .navbar.is-white {
