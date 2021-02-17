@@ -27,6 +27,13 @@ Route::post('/article/{article:slug}/reply', [CommentController::class, 'reply']
 Route::delete('/article/{article:slug}/comment/delete', [CommentController::class, 'delete'])->name('comment_delete');
 
 Route::post('/article/toggleLike', [LikeController::class, 'toggleLike']);
+Route::post('/article/{article}/checkLikes', [LikeController::class, 'checkLikes']);
+Route::post('/article/{article}/checkLiked', [LikeController::class, 'checkLiked']);
+
+Route::post('/comment/toggleLike', [LikeController::class, 'toggleLike']);
+Route::post('/comment/{comment}/checkLikes', [LikeController::class, 'checkLikes']);
+Route::post('/comment/{comment}/checkLiked', [LikeController::class, 'checkLiked']);
+
 //Route::post('/{type}/toggleLike', [LikeController::class, 'likeComment'])->name('likeComment');
 
 //Route::get('/admin', [AdminController::class, 'login'])->name('home');

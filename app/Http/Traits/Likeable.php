@@ -52,9 +52,9 @@ trait Likeable {
     /**
      * Relationship between like and user
      */
-    public function likes()
+    public static function likes()
     {
-        return $this->morphToMany('App\Models\User', 'likes');
+        return $this->morphToMany('App\Models\User', 'likeable', 'likes');
     }
 
 }

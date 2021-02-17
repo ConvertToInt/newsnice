@@ -1,7 +1,5 @@
 -switch everything to use app layout
--like system (articles&comments... or just articles)
--following categories
-have search panel pop up with categories.. when clicked send query string ?category= then fetch Category->articles() (m2m relationship defined)
+-following categories (have search panel pop up with categories.. when clicked send query string ?category= then fetch Category->articles() (m2m relationship defined))
 -admin panel & user
     -remove comments
     -unapprove articles
@@ -13,8 +11,10 @@ have search panel pop up with categories.. when clicked send query string ?categ
 -privacy policy (activate in jetstream.php)
 -landing page
 -spinners
+-paginate front page to 10
+-accessability (aria tags, change color scheme)
 
 EXTRA:
 -feed filters (new, top, hot)
 -smtp server (login filter .edu, .ac)
--report feature (add reported boolean to user, comment, or article)
+-report feature (reported table, polymorphic, 'reportable type (user, comment, post), reportable id')

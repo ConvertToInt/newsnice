@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Like;
 
 class Comment extends Model
 {
@@ -18,12 +20,12 @@ class Comment extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo('App\Models\User');
     }
 
     public function article()
     {
-        return $this->belongsTo(Article::class);
+        return $this->belongsTo('App\Models\Article');
     }
 
     public function replies()
@@ -42,6 +44,7 @@ class Comment extends Model
     public function isLiked($type) 
     {
         return $this->likes()
+            ->where('user_id', auth()->user()->id)
             ->where('likeable_id', $this->id)
             ->where('likeable_type', $this->getMorphClass()) //gets the type from the morph map defined in appserviceprovider
             ->exists();
