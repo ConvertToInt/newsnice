@@ -84,7 +84,7 @@
                         <div class="control has-icons-left">
                             <input class="input" type="name" name="articles" placeholder="Search for articles..." required>
                             <span class="icon is-small is-left">
-                            <i class="fas fa-search"></i>
+                                <i class="fas fa-search"></i>
                             </span>
                         </div>
                     </div>
@@ -92,11 +92,11 @@
                 </div>
                 <div class="navbar-item">
                     @if (Route::has('login'))
-                        <div class="hidden top-0 right-0 px-6 py-4 sm:block">
+                        <div class="hidden top-0 right-0 pr-6 py-4 sm:block">
                             @auth
                                 <a href="{{ route('profile.show') }}">
                                     <span class="icon is-medium has-text-black">
-                                    <i class="fas fa-cog fa-2x"></i>
+                                        <i class="fas fa-cog fa-2x"></i>
                                     </span>
                                 </a>
                             @else

@@ -1,11 +1,7 @@
 @extends('layout')
 
 @section('head')
-<style>
-    .display-comment .display-comment{
-        margin-left: 40px;
-    }
-</style>
+
 @endsection
 
 @section('content')

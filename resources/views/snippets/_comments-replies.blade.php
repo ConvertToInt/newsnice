@@ -1,9 +1,9 @@
-<link rel="stylesheet" href="{{url('css/article.css')}}">
+<link rel="stylesheet" href="{{url('css/comment.css')}}">
 
 @foreach($comments as $comment)
 <div class="display-comment">
     <div class="columns is-centered">
-        <div class="column is-half">
+        <div class="column is-6">
             <div class="box has-background-white-ter has-text-black-lighter">
                 <div class="columns" style="border-bottom:1px solid #DEDEDE">
                     <div class="column is-11">
@@ -39,11 +39,10 @@
 
                 <div class="columns">
                     <div class="column">
-                    <p class="is-5 has-text-black-lighter">{{$comment->body}}</p>
+                        <p class="is-5 has-text-black-lighter">{{$comment->body}}</p>
                     </div>
                 </div>
-                            
-
+                    
                 {{-- <div class="columns is-centered reply">
                     <div class="column is-12">
                     @auth
@@ -66,12 +65,14 @@
                     </div>
                 </div> --}}
                 <div class="columns">
-                    <div class="column">
+                    <div class="column is-10">
                         <div class="icon {{$comment->id}}_like">
                             <i class="fa fa-heart fa-lg"></i>
                         </div>
                         <span id="{{$comment->id}}_likes"></span>
-                        <a class="ml-3" href="#">Reply</a>
+                    </div>
+                    <div class="column is-2">
+                        <i class="fas fa-reply ml-4"></i><a class="ml-2 has-text-grey" href="#">Reply</a>
                     </div>
                 </div>
             </div>
@@ -79,6 +80,8 @@
     </div>
 
     <script>
+    var reply = $('div.display-comment').find('div.display-comment');
+    reply.addClass("reply");
 
     /**
      * Check if comment is liked
