@@ -1,18 +1,26 @@
 -switch everything to use app layout
--feed filter (categories, new, top)
+-feed filter (top)
 -admin panel & user
     -remove comments
     -unapprove articles
     -change user display name
     -ban users (https://blog.quickadminpanel.com/3-ways-to-delete-user-in-laravel-block-hide-or-hard-delete/)
 -authorization
--cookies for guest following
 -responsiveness
--privacy policy (activate in jetstream.php)
 -landing page
 -paginate feed (10)
--accessability (aria tags, change color scheme)
+-accessability (aria tags)
 
 EXTRA:
 -smtp server (login filter .edu, .ac)
 -report feature (reported table, polymorphic, 'reportable type (user, comment, post), reportable id')
+-privacy policy (activate in jetstream.php)
+
+
+issues:
+
+Should cookie categories be called following?
+Should categories be slugified on entry?
+categories cookie first set on domain visit not just index
+
+
