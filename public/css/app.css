@@ -1,3 +1,42 @@
+.inverted{
+  color:green !important;
+  background-color: black !important;
+}
+
+.font-sm{
+  font-size:17px !important;
+}
+
+.font-md{
+  font-size:19px !important;
+}
+
+.font-lg{
+  font-size:21px !important;
+}
+
+.defaultScheme{
+  width:30px;
+  height:30px;
+  border-radius:100%;
+  border:2px solid black;
+  background: linear-gradient( -45deg, hsl(0, 0%, 29%), hsl(0, 0%, 29%) 50%, white 50%, white 50%, hsl(0, 0%, 96%) 50% );
+}
+
+.invertedScheme{
+  width:30px;
+  height:30px;
+  border-radius:100%;
+  border:2px solid black;
+  background: linear-gradient( -45deg, green, green 50%, white 50%, white 50%, black 50% );
+}
+
+.hoverable:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.10), 0 6px 20px 0 rgba(0, 0, 0, 0.09);
+  cursor:pointer;
+}
+
+
 /*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
 /*

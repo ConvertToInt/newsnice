@@ -1,43 +1,33 @@
 <link rel="stylesheet" href="{{url('css/article.css')}}">
 
-<div class="columns is-centered">
-    <div class="column is-half">
+<div class="columns is-centered font-sm">
+    <div class="column is-7 mx-3">
         <a href="{{route('article_show', ['article'=>$article->slug])}}">
-            <div class="box has-background-white-ter mb-5 pb-0">
-                <div class="columns is-centered">
-                    <div class="column"></div>
-                        <div class="column is-3">
-                            <div class="imageBox">
-                                @if($article->thumbnail == "default")
-                                    <img src="img/placeholder.png" style="height:35px; width:35px">
-                                @else
+            <div class="box has-background-white-ter mb-5 article">
+                    <div class="columns">
+                        <div class="column" style="width:170px">
+                            {{-- <div style="width:18%; display:inline-block; height:6.5em; float:left"> --}}
+                                <div class="imageBox">
                                     <img src="{{$article->thumbnail}}" style="object-fit: cover; height:100%; width: 100%; border-radius:3%;">
-                                @endif
+                                </div>
+                            </div>
+                            <div class="column is-10 pr-6 mt-1">
+                            {{-- <div style="width:82%; display:inline-block; height:6.5em; float:right"> --}}
+                                <span class="has-text-weight-bold">{{$article->title}}</span>
+                            </div>
+                         
+                    </div>
+                    <div class="columns">
+                        <div class="column">
+                            <div class="icon {{$article->id}}_like">
+                                <i class="fa fa-heart fa-lg"></i>
+                            </div>
+                            <span id="{{$article->id}}_likes"></span>
+                        
+                            <div style="float:right">
+                                <span class="has-text-weight-bold">{{$article->category->name}}</span>&nbsp&middot;&nbsp{{$article->created_at->diffForHumans()}} {{-- diffforhumans uses created at to calculate time since creation --}}
                             </div>
                         </div>
-                        <div class="column is-9">
-                            <h1 class="has-text-weight-bold is-size-6 has-text-blue">{{$article->title}}</h1>
-                        </div>
-                    <div class="column"></div>
-                </div>
-                <div class="columns">
-                    <div class="column">
-                        <div class="icon {{$article->id}}_like">
-                            <i class="fa fa-heart fa-lg"></i>
-                        </div>
-                        <span id="{{$article->id}}_likes"></span>
-                    
-                        <div style="float:right">
-                            <span class="has-text-weight-bold is-size-6 has-text-grey-darker">{{$article->category->category}}</span>&nbsp&middot;&nbsp{{$article->created_at->diffForHumans()}} {{-- diffforhumans uses created at to calculate time since creation --}}
-                        </div>
-                    
-                        {{-- <form method ="POST" action='{{url("/article/{$article->id}/checkLikes")}}'>
-                        @csrf
-                        <button class="submit">test</button>
-                        <input type="hidden" name="id" value="{{ $article->id }}" />
-                        <input type="hidden" name="type" value="{{ $type }}" />
-                        </form> --}}
-                        
                     </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-/* @import url("https://fonts.googleapis.com/css?family=Verdana:400,700"); */
+@import url("https://fonts.googleapis.com/css?family=Verdana:400,700");
 /*$light-black:#1a1a1b;
 $black:#030303; //reddit body
 $light-grey:#424242;
@@ -2172,13 +2172,13 @@ a.tag:hover {
   border-radius: 4px;
   color: #2b2b2b; }
   .input::-moz-placeholder, .textarea::-moz-placeholder, .select select::-moz-placeholder {
-    color: #666666; }
+    color: rgba(43, 43, 43, 0.3); }
   .input::-webkit-input-placeholder, .textarea::-webkit-input-placeholder, .select select::-webkit-input-placeholder {
-    color: #666666; }
+    color: rgba(43, 43, 43, 0.3); }
   .input:-moz-placeholder, .textarea:-moz-placeholder, .select select:-moz-placeholder {
-    color: #666666; }
+    color: rgba(43, 43, 43, 0.3); }
   .input:-ms-input-placeholder, .textarea:-ms-input-placeholder, .select select:-ms-input-placeholder {
-    color: #666666; }
+    color: rgba(43, 43, 43, 0.3); }
   .input:hover, .textarea:hover, .select select:hover, .is-hovered.input, .is-hovered.textarea, .select select.is-hovered {
     border-color: #b5b5b5; }
   .input:focus, .textarea:focus, .select select:focus, .is-focused.input, .is-focused.textarea, .select select.is-focused, .input:active, .textarea:active, .select select:active, .is-active.input, .is-active.textarea, .select select.is-active {
@@ -3150,8 +3150,8 @@ button.dropdown-item {
     color: #0a0a0a; }
   a.dropdown-item.is-active,
   button.dropdown-item.is-active {
-    background-color: #3273dc;
-    color: #fff; }
+    background-color: rgba(71, 187, 255, 0.527);
+    color: white; }
 
 .dropdown-divider {
   background-color: #ededed;
@@ -3521,7 +3521,7 @@ button.dropdown-item {
 
 .navbar {
   background-color: white;
-  min-height: 7rem;
+  min-height: 5rem;
   position: relative;
   z-index: 30; }
   .navbar.is-white {
@@ -4074,8 +4074,8 @@ a.navbar-item,
   .navbar-link:focus-within,
   .navbar-link:hover,
   .navbar-link.is-active {
-    background-color: rgba(0, 0, 0, 0.3);
-    color: #3273dc; }
+    background-color: #fafafa;
+    color: rgba(0, 0, 0, 0); }
 
 .navbar-item {
   flex-grow: 0;
@@ -4109,7 +4109,7 @@ a.navbar-item,
 .navbar-link:not(.is-arrowless) {
   padding-right: 2.5em; }
   .navbar-link:not(.is-arrowless)::after {
-    border-color: #f9ed49;
+    border-color: #3273dc;
     margin-top: -0.375em;
     right: 1.125em; }
 
@@ -4122,7 +4122,7 @@ a.navbar-item,
     padding-right: 1.5rem; }
 
 .navbar-divider {
-  background-color: #666666;
+  background-color: whitesmoke;
   border: none;
   display: none;
   height: 2px;
@@ -4190,7 +4190,7 @@ a.navbar-item,
     .navbar.is-transparent .navbar-item.has-dropdown.is-active .navbar-link, .navbar.is-transparent .navbar-item.has-dropdown.is-hoverable:focus .navbar-link, .navbar.is-transparent .navbar-item.has-dropdown.is-hoverable:focus-within .navbar-link, .navbar.is-transparent .navbar-item.has-dropdown.is-hoverable:hover .navbar-link {
       background-color: transparent !important; }
     .navbar.is-transparent .navbar-dropdown a.navbar-item:focus, .navbar.is-transparent .navbar-dropdown a.navbar-item:hover {
-      background-color: #666666;
+      background-color: whitesmoke;
       color: #0a0a0a; }
     .navbar.is-transparent .navbar-dropdown a.navbar-item.is-active {
       background-color: whitesmoke;
@@ -4228,7 +4228,7 @@ a.navbar-item,
     justify-content: flex-end;
     margin-left: auto; }
   .navbar-dropdown {
-    background-color: #2b2b2b;
+    background-color: white;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
     border-top: 2px solid #dbdbdb;
@@ -4246,7 +4246,7 @@ a.navbar-item,
     .navbar-dropdown a.navbar-item {
       padding-right: 3rem; }
       .navbar-dropdown a.navbar-item:focus, .navbar-dropdown a.navbar-item:hover {
-        background-color: #666666;
+        background-color: whitesmoke;
         color: #0a0a0a; }
       .navbar-dropdown a.navbar-item.is-active {
         background-color: whitesmoke;
@@ -4303,7 +4303,7 @@ a.navbar-item,
   .navbar-link.is-active:not(:focus):not(:hover) {
     background-color: transparent; }
   .navbar-item.has-dropdown:focus .navbar-link, .navbar-item.has-dropdown:hover .navbar-link, .navbar-item.has-dropdown.is-active .navbar-link {
-    background-color: rgba(0, 0, 0, 0.3); } }
+    background-color: #fafafa; } }
 
 .hero.is-fullheight-with-navbar {
   min-height: calc(100vh - 5rem); }
